@@ -7,7 +7,7 @@ from collections import defaultdict, Counter
 from itertools import combinations, permutations
 
 import cv2
-import numpy as numpy
+import numpy as np
 import os
 import math
 
