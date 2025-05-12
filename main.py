@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.staticfiles import staticfiles
+from fastapi.staticfiles import StaticFiles
 
 from collections import defaultdict, Counter
 from itertools import combinations, permutations
