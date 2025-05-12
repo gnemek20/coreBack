@@ -24,7 +24,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.post("/help-core/")
-async def help(file: list[UploadFile] = File(...), job: str = Form(...)):
+async def help(files: list[UploadFile] = File(...), job: str = Form(...)):
   try:
     displays = []
     for file in files:
