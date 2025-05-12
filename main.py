@@ -51,7 +51,6 @@ async def help(files: list[UploadFile] = File(...), job: str = Form(...), target
 
       _, skill_names = zip(*parsed_skills)
       combinations = find_combinations(skill_names, target_skills)
-      print(combinations)
       results.append(combinations)
 
     return JSONResponse(content={
