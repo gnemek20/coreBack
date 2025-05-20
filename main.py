@@ -23,6 +23,8 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# TODO: 이미지 여러장이면 모든 AVG 중에 가장 높은 AVG값 가져오기
+# NOW: 한 장에서 가장 높은 AVG값 가져오는 형태
 @app.post("/help-core/")
 async def help(files: list[UploadFile] = File(...), job: str = Form(...), target_skills: list[str] = Form(...)):
   try:
@@ -316,6 +318,7 @@ def find_combinations(core_skills, target_skills):
           else:
             break
 
+  # 합성 가능한 코어 평균값이 가장 높은 조합 추출
   final_combinations = []
   max_avg = float(0)
   for valid_combo in valid_combinations:
